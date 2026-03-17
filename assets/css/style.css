@@ -6,6 +6,7 @@
   --light-background: #F6F8FF;
   --text-primary: #5c5c5c;
   --btn-hover: #0529bc;
+  --border-color: #e1e1e1;
   --linear-gradient: linear-gradient(to right, #002DE0, #0506AC);
 }
 
@@ -21,7 +22,11 @@ h5,
 h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
-  color: var(--white-color);
+  color: var(--black-color);
+}
+
+.text-black{
+  color: var(--black-color);
 }
 
 p,
@@ -62,10 +67,19 @@ span {
   height: 100vh;
   /* padding-top: 120px; */
   overflow: hidden;
+  
+}
+
+.hero-section-1{
+background-color: var(--light-background);
 }
 
 .hero-section h1 {
   line-height: 1.2;
+}
+
+.hero-title{
+  margin-bottom: 200px;
 }
 
 /* Wave Image */
@@ -77,6 +91,13 @@ span {
   height: 100%;
   background: url("../images/hero-img.svg") center / cover no-repeat;
   z-index: -1;
+}
+
+.hero-wave-1{
+  height: 50%;
+  top: 42dvh;
+  z-index: 0;
+  max-height: 100%;
 }
 
 .about-hero {
@@ -137,14 +158,15 @@ span {
 .outline-btn {
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
-  border-radius: 0px;
+  border-radius: 4px;
+  padding: 8px 32px;
 }
 
 .outline-btn:hover {
   border: 1px solid var(--primary-color);
-  background-color: var(--primary-color);
+  background: var(--linear-gradient);
   color: var(--white-color);
-  border-radius: 0px;
+  border-radius: 4px;
 }
 
 .hero-content {
@@ -167,12 +189,12 @@ span {
 }
 
 .main-title span {
-  color: #ff2e2e;
+  color: var(--primary-color);
 }
 
 .main-desc {
   max-width: 850px;
-  color: #cfcfcf;
+  color: var(--text-primary);
   font-size: 15px;
   line-height: 1.8;
 }
@@ -182,11 +204,16 @@ span {
   border-radius: 4px;
   padding: 30px;
   position: relative;
+  border: 1px solid var(--border-color);
 }
 
-.dark-card {
+/* .dark-card {
   background-color: var(--dark-color);
   border: 1px solid #373737;
+} */
+
+.stat-card svg path{
+  stroke: var(--primary-color);
 }
 
 .trophy {
@@ -210,12 +237,20 @@ span {
 .label {
   font-size: 14px;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: var(--black-color);
+}
+.label-1{
+  color: var(--white-color);
 }
 
 .value {
+  /* color: var(--white-color); */
   font-size: 42px;
   font-weight: 700;
+}
+
+.value-1{
+  color: var(--white-color);
 }
 
 /* Icons */
@@ -247,7 +282,8 @@ span {
 
 /* Section */
 .design-house {
-  padding: 80px 0;
+  background-color: var(--light-background);
+  padding: 120px 0;
   margin: 80px 0;
 }
 
@@ -264,18 +300,21 @@ span {
 .section-desc {
   max-width: 700px;
   font-size: 15px;
-  color: #cfcfcf;
+  color: var(--text-primary);
   line-height: 1.7;
 }
 
 /* Cards */
 .process-card {
-  background: var(--dark-color);
+  background: var(--white-color);
   padding: 20px 24px 60px 20px;
   border-radius: 4px;
   height: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
+    box-shadow: 
+    0 0px 18px rgba(0, 0, 0, 0.08),
+    0 0px 46px rgba(0, 0, 0, 0.06);
 }
 
 .process-card:hover {
@@ -305,7 +344,7 @@ span {
 
 .process-card ul li {
   font-size: 14px;
-  color: #d6d6d6;
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
@@ -664,7 +703,7 @@ span {
 
 /* Section title */
 .section-title span {
-  color: red;
+  color: var(--primary-color);
 }
 
 /* Card */
@@ -998,18 +1037,13 @@ textarea.custom-input {
   top: 100%;
   left: 0;
   width: 100%;
-  background: #000;
+  background: var(--white-color);
   padding: 50px 0;
   opacity: 0;
   visibility: hidden;
   transform: translateY(35px);
   transition: all 0.35s ease;
   z-index: 9999;
-
-  box-shadow:
-    0 20px 40px rgba(255, 255, 255, 0.06),
-    0 8px 16px rgba(255, 255, 255, 0.04),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.12);
 }
 
 /* ✅ Hover works here */
@@ -1035,13 +1069,13 @@ textarea.custom-input {
 }
 
 .mega-item h6 {
-  color: #fff;
+  color: var(--black-color);
   font-weight: 400;
   font-size: 14px;
 }
 
 .mega-item p {
-  color: #aaa;
+  color: var(--text-primary);
   font-size: 14px;
   padding-bottom: 12px;
   margin-bottom: 0px;
@@ -1057,6 +1091,10 @@ textarea.custom-input {
   border-radius: 2px;
 }
 
+.mega-item-icon svg path{
+  fill: var(--primary-color);
+}
+
 .mega-item-content {
   border-bottom: 1px solid #E1E1E1;
 }
@@ -1066,7 +1104,7 @@ textarea.custom-input {
 }
 
 .mega-tabs .nav-link {
-  color: #777;
+  color: var(--black-color);
   background: transparent;
   border: none;
   text-align: left;
@@ -1075,14 +1113,14 @@ textarea.custom-input {
 }
 
 .navbar-nav .nav-item .mega-menu .nav-link:hover {
-  color: var(--white-color) !important;
+  color: var(--primary-color) !important;
   background-color: transparent !important;
 }
 
 .navbar-nav .nav-item .mega-menu .nav-link.active {
   background-color: transparent !important;
-  border: 1px solid #E1E1E1 !important;
-  color: var(--white-color) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--primary-color) !important;
   border-radius: 2px !important;
 }
 
