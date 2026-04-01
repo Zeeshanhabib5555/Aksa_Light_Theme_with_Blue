@@ -21,7 +21,7 @@ h4,
 h5,
 h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--black-color);
 }
 
@@ -206,6 +206,10 @@ background-color: var(--light-background);
 }
 
 .main-title span {
+  color: var(--primary-color);
+}
+
+.span-color{
   color: var(--primary-color);
 }
 
@@ -578,61 +582,96 @@ background-color: var(--light-background);
   color: var(--primary-color);
 }
 
+
 .value-card {
   position: relative;
   height: 420px;
   overflow: hidden;
   cursor: pointer;
   border-radius: 6px;
-  transition: all 0.3s ease;
+  background-color: #ffffff; /* Sets the base to white */
+  display: flex;
+  flex-direction: column; /* Stacks text on top, image on bottom */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft baseline shadow */
 }
 
-.value-card:hover {
-  transform: translateY(-7.85477px) !important;
-  transition: all 0.3s ease;
-}
+/* .value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+} */
 
-
-.value-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-.value-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 1;
-}
-
-
-.value-card .overlay {
-  position: absolute;
-  bottom: 0;
-  z-index: 2;
+/* --- Text Content Styling --- */
+.card-content {
   padding: 24px;
+  background-color: #f1f1f1;
+  z-index: 2;
+  /* Flex shrink 0 prevents the padding/base text from squishing */
+  flex-shrink: 0; 
 }
 
 .value-card h5 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #333;
 }
 
-.value-card p {
+.main-text {
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
+  color: #555;
 }
 
+/* --- The Animation Magic (CSS Grid) --- */
+.reveal-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.value-card:hover .reveal-wrapper {
+  grid-template-rows: 1fr; /* Expands to fit the inner content */
+}
+
+.reveal-content {
+  overflow: hidden;
+}
+
+.hidden-text {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  margin-top: 16px;
+  padding-left: 12px;
+  border-left: 2px solid var(--primary-color); /* The vertical line from the video */
+  color: #666;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.value-card:hover .hidden-text {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s; /* Slight delay looks smoother as the box opens */
+}
+
+/* --- Image Styling --- */
+.value-card img {
+  width: 100%;
+  flex-grow: 1; /* Allows image to take up remaining card height */
+  min-height: 0; /* Critical: allows flex child to shrink past intrinsic dimensions */
+  object-fit: cover;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive adjustment */
 @media (max-width: 576px) {
   .value-card {
     height: 360px;
   }
-
   .core-values-section {
     padding: 60px 0;
   }
@@ -911,7 +950,7 @@ textarea.custom-input {
 }
 
 .talk-details {
-  border: 1px solid var(--text-muted);
+  border: 1px solid var(--border-color);
   padding: 20px;
   border-radius: 6px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -920,7 +959,11 @@ textarea.custom-input {
 .talk-details:hover {
   cursor: pointer;
   transform: translateY(-8px);
-  /* box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3); */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2)
+}
+
+.talk-details svg path{
+  fill: var(--primary-color);
 }
 
 .map {
@@ -1248,7 +1291,7 @@ color: var(--black-color);
 
 .shadow-image img {
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 10px 40px #a6caff;
   transition: 0.4s ease;
 }
 
