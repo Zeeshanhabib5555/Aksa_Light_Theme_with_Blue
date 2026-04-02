@@ -95,6 +95,7 @@ background-color: var(--light-background);
 
 .hero-title{
   margin-bottom: 240px;
+  z-index: 1;
 }
 
 /* Wave Image */
@@ -454,6 +455,7 @@ background-color: var(--light-background);
   width: fit-content;
   align-items: center;
   gap: 30px;
+  border-radius: 4px;
 }
 
 /* Responsive */
@@ -604,7 +606,7 @@ background-color: var(--light-background);
 /* --- Text Content Styling --- */
 .card-content {
   padding: 24px;
-  background-color: #f1f1f1;
+  background-color: var(--light-background);
   z-index: 2;
   /* Flex shrink 0 prevents the padding/base text from squishing */
   flex-shrink: 0; 
@@ -681,9 +683,14 @@ background-color: var(--light-background);
   background-color: #00135E;
 }
 
+.bg-light-color{
+  background-color: var(--light-background);
+  padding: 120px 0 !important;
+}
+
 .footer-section {
   padding: 60px 0 0 0;
-  margin: 120px 0 0 0;
+  /* margin: 120px 0 0 0; */
 }
 
 .footer-text {
@@ -1087,10 +1094,10 @@ color: var(--black-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--dark-color);
+  /* background-color: var(--dark-color); */
   border: 1px solid var(--secondary-color);
   padding: 20px 10px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .logo-div {
@@ -1189,6 +1196,7 @@ color: var(--black-color);
   transform: translateY(35px);
   transition: all 0.35s ease;
   z-index: 9999;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.075);
 }
 
 /* ✅ Hover works here */
@@ -1388,6 +1396,10 @@ color: var(--black-color);
 
 .position-section{
   background-color: var(--light-background);
+}
+
+.img-para-section svg path{
+  fill: var(--primary-color);
 }
 
 
