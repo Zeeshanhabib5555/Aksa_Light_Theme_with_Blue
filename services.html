@@ -7,6 +7,9 @@
     <title>AKSA</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <link href="assets/css/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -1015,7 +1018,7 @@
     <section class="hero-section hero-section-1 d-flex align-items-center">
         <div class="container text-center hero-title">
             <p class="text-uppercase">Home | Services</p>
-            <h1 class="hero-content fw-bold mt-3">
+            <h1 class="hero-content fw-bold mt-3" data-aos="fade-up">
                 Experts In Breakthrough Solutions
             </h1>
         </div>
@@ -1029,8 +1032,8 @@
     <section class="img-para-section py-5 my-5">
         <div class="container">
 
-            <h2 class="section-title text-center">
-                We are the award-winning solutions <br> partner your <span>business needs</span>
+            <h2 class="section-title text-center" data-aos="fade-down">
+                We are the award-winning solutions <br> partner your <span class="span-color">business needs</span>
             </h2>
 
             <p class="section-subtitle text-center"> We bring together an understanding of your business challenges,
@@ -1097,7 +1100,7 @@
             <div class="row align-items-center g-5">
 
                 <!-- Left Image -->
-                <div class="col-lg-6 text-center">
+                <div class="col-lg-6 text-center" data-aos="fade-right">
                     <div class="shadow-image position-relative mx-auto">
                         <img src="../assets/images/Airborne Intercom System.svg" class="img-fluid rounded-4"
                             alt="Digital Account Opening">
@@ -1105,7 +1108,7 @@
                 </div>
 
                 <!-- Right Content -->
-                <div class="col-lg-6 text-white">
+                <div class="col-lg-6 text-white" data-aos="fade-left">
                     <h2 class="section-title">
                         Software
                     </h2>
@@ -1179,7 +1182,7 @@
             <div class="row align-items-center g-5">
 
                 <!-- Right Content -->
-                <div class="col-lg-6 text-white">
+                <div class="col-lg-6 text-white" data-aos="fade-right">
                     <h2 class="section-title">
                         Hardware
                     </h2>
@@ -1194,7 +1197,7 @@
                 </div>
 
                 <!-- Left Image -->
-                <div class="col-lg-6 text-center">
+                <div class="col-lg-6 text-center" data-aos="fade-left">
                     <div class="shadow-image position-relative mx-auto">
                         <img src="../assets/images/Airborne Intercom System.svg" class="img-fluid rounded-4"
                             alt="Digital Account Opening">
@@ -1436,6 +1439,15 @@
     </footer>
 
     <!-- Footer Section End  -->
+
+      <script src="assets/js/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // Manage Animation speed
+      easing: 'ease-in-out', // smooth easing
+      once: false, // repeat animation on scroll
+    });
+  </script>
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>

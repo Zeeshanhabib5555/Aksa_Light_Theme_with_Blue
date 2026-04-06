@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/animate.min.css" />
+  <link href="assets/css/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -902,7 +905,7 @@
   <section class="hero-section hero-section-1 d-flex align-items-center">
     <div class="container hero-title text-center">
       <p class="text-uppercase text-black">Innovation | Security</p>
-      <h1 class="hero-content fw-bold mt-3">
+      <h1 class="hero-content fw-bold mt-3" data-aos="fade-down">
         Empowering
         <span class="d-block text-black">Industries For Success</span>
       </h1>
@@ -973,7 +976,7 @@
 
       <!-- Heading -->
       <div class="text-center mb-5">
-        <h1 class="main-title">
+        <h1 class="main-title" data-aos="fade-down">
           A Leading Technology <span>Company</span>
         </h1>
         <p class="main-desc mx-auto">
@@ -1064,7 +1067,7 @@
 
       <!-- Heading -->
       <div class="text-center mb-5">
-        <h1 class="section-title">
+        <h1 class="section-title" data-aos="fade-down">
           An Innovative Technology <span class="span-color">Design House</span>
         </h1>
         <p class="section-desc mx-auto">
@@ -1077,7 +1080,7 @@
       <div class="row g-4">
 
         <!-- Your Idea -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6" data-aos="fade-right">
           <div class="process-card h-100">
             <div class="card-icon">
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1096,7 +1099,7 @@
         </div>
 
         <!-- Our Execution -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up">
           <div class="process-card h-100">
             <div class="card-icon">
               <svg width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1115,7 +1118,7 @@
         </div>
 
         <!-- End Product -->
-        <div class="col-lg-4 col-md-6 mx-md-auto">
+        <div class="col-lg-4 col-md-6 mx-md-auto" data-aos="fade-left">
           <div class="process-card h-100">
             <div class="card-icon">
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1200,7 +1203,7 @@
             waterfall and agile methodologies that best suit client needs.
           </p>
           <!-- Services Icons Row -->
-          <div class="services-box mt-5">
+          <div class="services-box mt-5" data-aos="fade-up">
             <div class="row g-0 text-center">
 
               <div class="col-6 col-md service-item">
@@ -1950,6 +1953,14 @@
     });
   </script>
 
+  <script src="assets/js/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // Manage Animation speed
+      easing: 'ease-in-out', // smooth easing
+      once: false, // repeat animation on scroll
+    });
+  </script>
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>

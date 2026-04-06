@@ -7,6 +7,9 @@
     <title>AKSA</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <link href="assets/css/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -1009,7 +1012,7 @@
     <section class="hero-section d-flex align-items-center">
         <div class="container text-center">
             <p class="text-uppercase">Home | Contact Us</p>
-            <h1 class="hero-content fw-bold mt-3">
+            <h1 class="hero-content fw-bold mt-3" data-aos="fade-up">
                 Contact Us
             </h1>
 
@@ -1073,7 +1076,7 @@
 
             <!-- Heading -->
             <div class="text-center mb-5">
-                <h1 class="section-title">
+                <h1 class="section-title" data-aos="fade-down">
                     Let’s <span class="span-color">Talk</span>.
                 </h1>
                 <p class="section-desc mx-auto">
@@ -1082,7 +1085,7 @@
                 </p>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-aos="fade-right">
                     <div class="talk-details">
                         <svg class="mb-5" width="36" height="30" viewBox="0 0 36 30" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -1095,7 +1098,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-aos="fade-up">
                     <div class="talk-details">
                         <svg class="mb-5" width="30" height="30" viewBox="0 0 30 30" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -1108,7 +1111,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-aos="fade-left">
                     <div class="talk-details">
                         <svg class="mb-5" width="25" height="30" viewBox="0 0 25 30" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -1266,7 +1269,14 @@
 
     <!-- Footer Section End  -->
 
-
+    <script src="assets/js/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // Manage Animation speed
+            easing: 'ease-in-out', // smooth easing
+            once: false, // repeat animation on scroll
+        });
+    </script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 

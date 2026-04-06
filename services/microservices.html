@@ -7,6 +7,9 @@
     <title>AKSA</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <link href="assets/css/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -1022,7 +1025,7 @@
     <section class="hero-section hero-section-1 d-flex align-items-center">
         <div class="container text-center hero-title">
             <p class="text-uppercase">Home | Services | Microservices</p>
-            <h1 class="hero-content fw-bold mt-3">
+            <h1 class="hero-content fw-bold mt-3" data-aos="fade-up">
                 Microservices
             </h1>
         </div>
@@ -1333,6 +1336,15 @@
     </footer>
 
     <!-- Footer Section End  -->
+
+    <script src="assets/js/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // Manage Animation speed
+            easing: 'ease-in-out', // smooth easing
+            once: false, // repeat animation on scroll
+        });
+    </script>
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>

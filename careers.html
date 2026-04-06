@@ -7,6 +7,9 @@
     <title>AKSA</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+      <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/animate.min.css" />
+  <link href="assets/css/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -1009,7 +1012,7 @@
     <section class="hero-section d-flex align-items-center">
         <div class="container text-center">
             <p class="text-uppercase">Home | Careers</p>
-            <h1 class="hero-content fw-bold mt-3">
+            <h1 class="hero-content fw-bold mt-3" data-aos="fade-up">
                 Careers
             </h1>
 
@@ -1027,7 +1030,7 @@
 
             <!-- Heading -->
             <div class="text-center mb-5">
-                <h1 class="main-title">
+                <h1 class="main-title" data-aos="fade-down">
                     Open <span>Positions</span>
                 </h1>
                 <p class="main-desc mx-auto">
@@ -1236,7 +1239,7 @@
 
             <!-- Heading -->
             <div class="text-center mb-5">
-                <h1 class="main-title">
+                <h1 class="main-title" data-aos="fade-down">
                     Benefits
                 </h1>
                 <p class="main-desc mx-auto">
@@ -1477,6 +1480,15 @@
     </footer>
 
     <!-- Footer Section End  -->
+
+      <script src="assets/js/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // Manage Animation speed
+      easing: 'ease-in-out', // smooth easing
+      once: false, // repeat animation on scroll
+    });
+  </script>
 
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
