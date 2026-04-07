@@ -1402,6 +1402,15 @@ color: var(--black-color);
   fill: var(--primary-color);
 }
 
+/* Stop animation only on mobile for this section */
+@media (max-width: 767px) {
+  .stop-aos-mobile {
+    opacity: 1 !important;       /* ensures element is fully visible */
+    transform: none !important;  /* cancels AOS transform */
+    transition: none !important; /* prevents AOS transition */
+  }
+}
+
 
 
 

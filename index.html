@@ -1080,7 +1080,7 @@
       <div class="row g-4">
 
         <!-- Your Idea -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-right">
+        <div class="col-lg-4 col-md-6 responsive-aos" data-desktop-aos="fade-right" data-mobile-aos="fade-up">
           <div class="process-card h-100">
             <div class="card-icon">
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1099,7 +1099,7 @@
         </div>
 
         <!-- Our Execution -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6 responsive-aos" data-desktop-aos="fade-up" data-mobile-aos="fade-up">
           <div class="process-card h-100">
             <div class="card-icon">
               <svg width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1118,7 +1118,7 @@
         </div>
 
         <!-- End Product -->
-        <div class="col-lg-4 col-md-6 mx-md-auto" data-aos="fade-left">
+        <div class="col-lg-4 col-md-6 responsive-aos" data-desktop-aos="fade-left" data-mobile-aos="fade-up">
           <div class="process-card h-100">
             <div class="card-icon">
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1955,12 +1955,35 @@
 
   <script src="assets/js/aos.js"></script>
   <script>
+  // 1. Check if the screen is mobile size (768px or smaller)
+  const isMobile = window.innerWidth <= 768; 
+
+  // 2. Find all elements that need responsive animations
+  const responsiveElements = document.querySelectorAll('.responsive-aos');
+
+  // 3. Assign the correct animation before AOS initializes
+  responsiveElements.forEach(el => {
+    if (isMobile) {
+      el.setAttribute('data-aos', el.getAttribute('data-mobile-aos'));
+    } else {
+      el.setAttribute('data-aos', el.getAttribute('data-desktop-aos'));
+    }
+  });
+
+  // 4. Initialize AOS with your custom settings
+  AOS.init({
+    duration: 800,         // Manage Animation speed
+    easing: 'ease-in-out', // smooth easing
+    once: false,           // repeat animation on scroll
+  });
+</script>
+  <!-- <script>
     AOS.init({
       duration: 800, // Manage Animation speed
       easing: 'ease-in-out', // smooth easing
       once: false, // repeat animation on scroll
     });
-  </script>
+  </script> -->
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
