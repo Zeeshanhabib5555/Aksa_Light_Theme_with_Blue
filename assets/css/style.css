@@ -117,15 +117,39 @@ background-color: var(--light-background);
 }
 
 .about-hero {
-  background: url("../images/about-us-hero.svg") center / cover no-repeat;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url("../images/About-us.png") center / cover no-repeat;
+}
+
+.services-hero {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url("../images/services.png") center / cover no-repeat;
+}
+
+.industries-hero {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url("../images/industries-hero.png") center / cover no-repeat;
+}
+
+.insights-hero {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url("../images/insights-hero.png") center / cover no-repeat;
 }
 
 .contact-hero {
-  background: url("../images/contact-us-hero.svg") center / cover no-repeat;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url("../images/contact-us.png") center / cover no-repeat;
 }
 
 .careers-hero {
-  background: url("../images/careers-hero.svg") center / cover no-repeat;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url("../images/careers.png") center / cover no-repeat;
 }
 
 .subpage-hero-bg {
@@ -476,7 +500,12 @@ background-color: var(--light-background);
 
 .industries-section {
   padding: 100px 0;
-  background: radial-gradient(circle at top, #0b1f4b, #020d2b);
+  /* background: radial-gradient(circle at top, #0b1f4b, #020d2b); */
+  background-image: url(/assets/images/Globe.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   color: #fff;
   position: relative;
   overflow: hidden;
