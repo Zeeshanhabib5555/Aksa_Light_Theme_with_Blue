@@ -1954,36 +1954,41 @@
   </script>
 
   <script src="assets/js/aos.js"></script>
+
   <script>
-    // 1. Check if the screen is mobile size (768px or smaller)
-    const isMobile = window.innerWidth <= 768;
+    document.addEventListener("DOMContentLoaded", function () {
 
-    // 2. Find all elements that need responsive animations
-    const responsiveElements = document.querySelectorAll('.responsive-aos');
+      function setAOS() {
+        const isMobile = window.innerWidth <= 768;
+        const elements = document.querySelectorAll('.responsive-aos');
 
-    // 3. Assign the correct animation before AOS initializes
-    responsiveElements.forEach(el => {
-      if (isMobile) {
-        el.setAttribute('data-aos', el.getAttribute('data-mobile-aos'));
-      } else {
-        el.setAttribute('data-aos', el.getAttribute('data-desktop-aos'));
+        elements.forEach(el => {
+          if (isMobile) {
+            el.setAttribute('data-aos', el.getAttribute('data-mobile-aos'));
+          } else {
+            el.setAttribute('data-aos', el.getAttribute('data-desktop-aos'));
+          }
+        });
+
+        // Refresh AOS after updating attributes
+        AOS.refreshHard();
       }
-    });
 
-    // 4. Initialize AOS with your custom settings
-    AOS.init({
-      duration: 800,         // Manage Animation speed
-      easing: 'ease-in-out', // smooth easing
-      once: false,           // repeat animation on scroll
+      // Run first time
+      setAOS();
+
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: false,
+      });
+
+      // Run again on resize
+      window.addEventListener('resize', setAOS);
+
     });
   </script>
-  <!-- <script>
-    AOS.init({
-      duration: 800, // Manage Animation speed
-      easing: 'ease-in-out', // smooth easing
-      once: false, // repeat animation on scroll
-    });
-  </script> -->
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/css/animate.min.css" />
   <link href="assets/css/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -978,7 +978,7 @@
       <div class="row g-4">
 
         <!-- Why AKSA -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-right">
+        <div class="col-lg-4 col-md-6 responsive-aos" data-desktop-aos="fade-right" data-mobile-aos="fade-up">
           <div class="leading-card h-100">
             <div class="border-0 mb-4">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -998,7 +998,7 @@
         </div>
 
         <!-- Quality and Operational Excellence -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6 responsive-aos" data-desktop-aos="fade-down" data-mobile-aos="fade-up">
           <div class="leading-card h-100">
             <div class="border-0 mb-4">
               <svg width="42" height="50" viewBox="0 0 42 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1017,7 +1017,7 @@
         </div>
 
         <!-- Sustainability by Innovation -->
-        <div class="col-lg-4 col-md-6 mx-md-auto" data-aos="fade-left">
+        <div class="col-lg-4 col-md-6 mx-md-auto responsive-aos" data-desktop-aos="fade-left" data-mobile-aos="fade-up">
           <div class="leading-card h-100">
             <div class="border-0 mb-4">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1232,7 +1232,11 @@
             <div class="swiper-slide"><span>2024</span></div>
             <div class="swiper-slide"><span>2025</span></div>
           </div>
-          <div class="timeline-line"></div>
+          <div class="timeline-wrapper">
+            <div class="timeline-line"></div>
+            <div class="timeline-progress"></div>
+            <div class="timeline-dots"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1386,68 +1390,130 @@
 
   <!-- Footer Section End  -->
 
-  <script src="assets/js/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800, // Manage Animation speed
-      easing: 'ease-in-out', // smooth easing
-      once: false, // repeat animation on scroll
-    });
-  </script>
+
 
 
   <!-- Journey js start  -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
 
-  <script>document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
 
-      // 1. Initialize the Bottom Navigation (Years)
+      // 1. NAV SLIDER (Years)
       const navSlider = new Swiper(".nav-slider", {
         slidesPerView: 4,
         spaceBetween: 0,
-        centeredSlides: false, // Starts from left
-        slideToClickedSlide: true,
+        slideToClickedSlide: true, // Enable the click to slide feature
         watchSlidesProgress: true,
+
         breakpoints: {
-          768: { slidesPerView: 8 }, // Desktop view
+          768: { slidesPerView: 8 },
           1024: { slidesPerView: 10 }
         }
       });
 
-      // 2. Initialize the Main Content
+      // 2. CONTENT SLIDER
       const contentSlider = new Swiper(".content-slider", {
         spaceBetween: 30,
         speed: 800,
         effect: 'fade',
         fadeEffect: { crossFade: true },
+
         thumbs: {
           swiper: navSlider,
         },
+
         autoplay: {
           delay: 5000,
           disableOnInteraction: false,
         }
       });
 
-      // 3. Dynamic Progress Line Logic
-      function updateProgress() {
-        const totalSlides = contentSlider.slides.length - 1;
-        const currentSlide = contentSlider.activeIndex;
-        // Calculate percentage based on active index
-        const progress = (currentSlide / totalSlides) * 100;
+      // 3. CREATE DOTS
+      const dotsContainer = document.querySelector('.timeline-dots');
+      const totalSlides = contentSlider.slides.length;
 
-        // Update the CSS variable for the blue line
-        document.querySelector('.timeline-line').style.setProperty('--progress', `${progress}%`);
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        dotsContainer.appendChild(dot);
       }
 
-      // Run on slide change
-      contentSlider.on('slideChange', updateProgress);
+      const dots = document.querySelectorAll('.timeline-dots span');
 
-      // Run once on load
+      // 4. UPDATE PROGRESS FUNCTION (MAIN LOGIC)
+      function updateProgress() {
+
+        const total = totalSlides - 1;
+
+        // Get the index of the active slide in the content slider
+        const current = contentSlider.realIndex;
+
+        const progressPercent = (current / total) * 100;
+
+        // Update the progress bar
+        document.querySelector('.timeline-progress').style.width = progressPercent + "%";
+
+        // Sync the nav slider's position with the active slide
+        navSlider.slideTo(current);
+
+        // Update the dots: Add active class to corresponding dots
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index <= current);
+        });
+      }
+
+      // 5. EVENTS (only one clean event)
+      contentSlider.on('slideChangeTransitionEnd', updateProgress);
+
+      // 6. INITIAL LOAD
       updateProgress();
-    });</script>
+
+    });
+
+  </script>
 
   <!-- Journey js Ends  -->
+
+  <!-- AOS Animation Script Start  -->
+
+  <script src="assets/js/aos.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      function setAOS() {
+        const isMobile = window.innerWidth <= 768;
+        const elements = document.querySelectorAll('.responsive-aos');
+
+        elements.forEach(el => {
+          if (isMobile) {
+            el.setAttribute('data-aos', el.getAttribute('data-mobile-aos'));
+          } else {
+            el.setAttribute('data-aos', el.getAttribute('data-desktop-aos'));
+          }
+        });
+
+        // Refresh AOS after updating attributes
+        AOS.refreshHard();
+      }
+
+      // Run first time
+      setAOS();
+
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: false,
+      });
+
+      // Run again on resize
+      window.addEventListener('resize', setAOS);
+
+    });
+  </script>
+
+  <!-- AOS Animation Script End  -->
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
 
