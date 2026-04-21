@@ -746,6 +746,12 @@ p {
 }
 
 .footer-section .contact-item p {
+  /* color: var(--white-color) !important; */
+  color: #9d9d9d !important;
+}
+
+.footer-section .contact-item p:hover {
+  /* color: var(--white-color) !important; */
   color: var(--white-color) !important;
 }
 
@@ -763,12 +769,14 @@ p {
 }
 
 .footer-links a {
-  color: var(--white-color) !important;
+  /* color: var(--white-color) !important; */
+  color: #9d9d9d;
   text-decoration: none;
 }
 
 .footer-links a:hover {
-  color: var(--black-color) !important;
+  /* color: var(--black-color) !important; */
+  color: #ffffff;
 }
 
 .contact-item {
@@ -783,11 +791,11 @@ p {
 }
 
 .contact-item svg {
-  fill: var(--white-color);
+  fill: #9d9d9d;
 }
 
 .contact-item:hover svg {
-  fill: var(--black-color);
+  fill: var(--white-color);
   cursor: pointer !important;
 }
 
@@ -803,7 +811,7 @@ p {
 }
 
 .social-icons svg:hover {
-  fill: var(--black-color);
+  fill: var(--primary-color);
 }
 
 .footer-bottom {
