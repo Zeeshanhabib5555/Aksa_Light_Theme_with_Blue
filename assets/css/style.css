@@ -1466,182 +1466,142 @@ textarea.custom-input {
   }
 }
 
-
 /* Our journey section Css start  */
 
-.journey-container {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 0 20px;
-  text-align: center;
-}
+    .timeline-section .timeline-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
 
-/* Upper Content Box */
-.content-slider {
-  margin-bottom: 60px;
-  overflow: visible !important;
-}
+    .bg-marquee-container {
+      position: absolute;
+      top: 25%;
+      width: 100%;
+      transform: translateY(-50%);
+      z-index: 0;
+      pointer-events: none;
+    }
 
-.info-card {
-  background: var(--light-background);
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid #eee;
-  position: relative;
-  max-width: 600px;
-  margin: 0 auto;
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-  z-index: 2;
-}
+    .timeline-section .bg-swiper .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
 
-.info-card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
+    .timeline-section .bg-swiper .swiper-slide {
+      font-size: 18vw;
+      font-weight: 600;
+      color: #F6F8FF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      letter-spacing: -10px;
+      width: auto;
+      padding: 0 8vw;
+    }
 
-.year-label {
-  background: var(--primary-color);
-  color: white;
-  padding: 5px 15px;
-  border-radius: 4px;
-  width: fit-content;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
+    .timeline-section .main-slider {
+      width: 100%;
+      z-index: 10;
+      margin: auto 0;
+    }
 
-.bg-year {
-  position: absolute;
-  font-size: 10rem;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.03);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  pointer-events: none;
-}
+    .timeline-section .info-card {
+      background: #F6F8FF;
+      border: 1px solid #e1e1e1;
+      padding: 3.5rem;
+      border-radius: 4px;
+      max-width: 600px;
+      width: 90%;
+      margin: 0 auto;
+    }
 
-/* Timeline Navigation */
-/* .timeline-nav {
-  position: relative;
-  padding-top: 40px;
-} */
+    .timeline-section .nav-section {
+      width: 94%;
+      margin-left: 3%;
+      z-index: 20;
+      position: relative;
+      padding-bottom: 40px;
+      margin-top: 60px;
+    }
 
-.nav-slider .swiper-slide {
-  cursor: pointer;
-  opacity: 0.4;
-  transition: 0.3s;
-  font-weight: 600;
-  margin-bottom: 20px;
-  padding: 6px;
-}
+    .timeline-section .nav-slider .swiper-slide {
+      height: 104px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+    }
 
-.nav-slider .swiper-slide {
-  /* border: 1px solid var(--border-color); */
-  color: var(--primary-color);
-  opacity: 1;
-  border-radius: 4px;
-}
+    .timeline-section .year-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: 8px 16px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 35px;
+      transition: 0.3s;
+      background: transparent;
+      border-radius: 4px;
+    }
 
-.nav-slider .swiper-slide-thumb-active {
-  opacity: 1;
-  color: var(--white-color);
-  background-color: var(--primary-color);
-}
+    .timeline-section .swiper-slide-thumb-active .year-label {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
 
-/* The Blue Line */
-/* .timeline-line {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: var(--primary-color);
-  z-index: -1;
-  border-radius: 50px;
-} */
+    .timeline-section .slide-passed .year-label {
+      color: var(--text-primary);
+    }
 
-.timeline-wrapper {
-  position: relative;
-  width: 100%;
-  height: 20px;
-  margin-top: 20px;
-}
+    .timeline-section .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--text-primary);
+      z-index: 5;
+      position: relative;
+      transition: 0.3s;
+    }
 
-/* Base grey line */
-.timeline-line {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: #e0e0e0;
-  transform: translateY(-50%);
-  border-radius: 50px;
-}
+    .timeline-section .nav-slider .swiper-slide::after {
+      content: '';
+      position: absolute;
+      bottom: 21px;
+      left: -50%;
+      width: 100%;
+      height: 2px;
+      background: #222;
+      z-index: 1;
+    }
 
-/* Blue progress */
-.timeline-progress {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  height: 6px;
-  width: 0%;
-  background: var(--primary-color);
-  transform: translateY(-50%);
-  border-radius: 50px;
-  transition: width 0.4s ease;
-}
+    .timeline-section .nav-slider .swiper-slide:first-child::after {
+      display: none;
+    }
 
-/* Dots container */
-.timeline-dots {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-}
+    .timeline-section .swiper-slide-thumb-active .dot {
+      background: var(--primary-color);
+      box-shadow: 0 0 15px var(--primary-color);
+      transform: scale(1.2);
+    }
 
-/* Default dot */
-.timeline-dots span {
-  width: 10px;
-  height: 10px;
-  background: #ccc;
-  border-radius: 50%;
-  transition: 0.3s;
-}
+    .timeline-section .slide-passed .dot {
+      background: var(--primary-color);
+    }
 
-/* Active + passed dots */
-.timeline-dots span.active {
-  background: var(--primary-color);
-  transform: scale(1.4);
-}
+    .timeline-section .slide-passed::after,
+    .swiper-slide-thumb-active::after {
+      background: var(--primary-color) !important;
+    }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .title {
-    font-size: 1.8rem;
-  }
-
-  .info-card {
-    padding: 20px;
-  }
-
-  .bg-year {
-    font-size: 5rem;
-  }
-
-  .timeline-wrapper {
-    display: none;
-  }
-}
+    .timeline-section .badge-year{
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      border-radius: 4px;
+    }
 
 /* Our journey section Css Ends  */
 
