@@ -7,6 +7,7 @@
     <title>AKSA</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link href="../assets/css/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -1022,7 +1023,7 @@
     <section class="hero-section hero-section-1 d-flex align-items-center">
         <div class="container text-center hero-title">
             <p class="text-uppercase">Home | Industries | HR Services</p>
-            <h1 class="hero-content fw-bold mt-3">
+            <h1 class="hero-content fw-bold mt-3" data-aos="fade-up">
                 HR Services
             </h1>
         </div>
@@ -1040,14 +1041,14 @@
 
                 <!-- Left Image -->
                 <div class="col-lg-6 text-center">
-                    <div class="shadow-image position-relative mx-auto">
+                    <div class="shadow-image position-relative mx-auto responsive-aos" data-desktop-aos="fade-right" data-mobile-aos="fade-up">
                         <img src="../assets/images/HR Services.webp" class="img-fluid rounded-4"
                             alt="Digital Account Opening">
                     </div>
                 </div>
 
                 <!-- Right Content -->
-                <div class="col-lg-6 text-white">
+                <div class="col-lg-6 text-white responsive-aos" data-desktop-aos="fade-left" data-mobile-aos="fade-up">
                     <h2 class="section-title">
                         HR <span class="span-color">Services</span>
                     </h2>
@@ -1246,6 +1247,47 @@
   </footer>
 
   <!-- Footer Section End  -->
+
+    <!-- AOS Animation Script Start  -->
+
+  <script src="../assets/js/aos.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      function setAOS() {
+        const isMobile = window.innerWidth <= 768;
+        const elements = document.querySelectorAll('.responsive-aos');
+
+        elements.forEach(el => {
+          if (isMobile) {
+            el.setAttribute('data-aos', el.getAttribute('data-mobile-aos'));
+          } else {
+            el.setAttribute('data-aos', el.getAttribute('data-desktop-aos'));
+          }
+        });
+
+        // Refresh AOS after updating attributes
+        AOS.refreshHard();
+      }
+
+      // Run first time
+      setAOS();
+
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: false,
+      });
+
+      // Run again on resize
+      window.addEventListener('resize', setAOS);
+
+    });
+  </script>
+
+  <!-- AOS Animation Script End  -->
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>

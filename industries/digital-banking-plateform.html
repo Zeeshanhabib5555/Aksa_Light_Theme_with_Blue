@@ -7,6 +7,7 @@
     <title>AKSA</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link href="../assets/css/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -1022,7 +1023,7 @@
     <section class="hero-section hero-section-1 d-flex align-items-center">
         <div class="container text-center hero-title">
             <p class="text-uppercase">Home | Industries | Digital Banking Platform</p>
-            <h1 class="hero-content fw-bold mt-3">
+            <h1 class="hero-content fw-bold mt-3" data-aos="fade-up">
                 Digital Banking Platform
             </h1>
         </div>
@@ -1038,7 +1039,7 @@
     <section class="img-para-section py-5 my-5">
         <div class="container">
 
-            <h2 class="section-title text-center">
+            <h2 class="section-title text-center" data-aos="fade-up">
                 Digital Signature Certificate <span class="span-color">Services</span>
             </h2>
             <p class="section-subtitle text-center">
@@ -1058,7 +1059,7 @@
                 <h4 class="fw-bold text-center">Benefits of Digital Signatures:</h4>
 
                 <div class="col-12 col-sm-6 col-md-3">
-                    <div class="benefit-card text-center">
+                    <div class="benefit-card text-center" data-aos="fade-up">
                         <svg class="mb-3" width="36" height="36" viewBox="0 0 36 36" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -1070,7 +1071,7 @@
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-3 ">
-                    <div class="benefit-card text-center">
+                    <div class="benefit-card text-center" data-aos="fade-down">
                         <svg class="mb-3" width="36" height="36" viewBox="0 0 36 36" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -1081,7 +1082,7 @@
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-3 ">
-                    <div class="benefit-card text-center">
+                    <div class="benefit-card text-center" data-aos="fade-up">
                         <svg class="mb-3" width="36" height="36" viewBox="0 0 36 36" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -1093,7 +1094,7 @@
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-3 ">
-                    <div class="benefit-card text-center">
+                    <div class="benefit-card text-center" data-aos="fade-down">
                         <svg class="mb-3" width="36" height="36" viewBox="0 0 36 36" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -1117,14 +1118,14 @@
 
                 <!-- Left Image -->
                 <div class="col-lg-6 text-center">
-                    <div class="shadow-image position-relative mx-auto">
+                    <div class="shadow-image position-relative mx-auto responsive-aos" data-desktop-aos="fade-right" data-mobile-aos="fade-up">
                         <img src="../assets/images/Digital_Account_Opening.webp" class="img-fluid rounded-4"
                             alt="Digital Account Opening">
                     </div>
                 </div>
 
                 <!-- Right Content -->
-                <div class="col-lg-6 text-white">
+                <div class="col-lg-6 text-white responsive-aos" data-desktop-aos="fade-left" data-mobile-aos="fade-up">
                     <h2 class="section-title">
                         Digital Account Opening & Digital Lending <span class="span-color">Applications</span>
                     </h2>
@@ -1248,7 +1249,7 @@
             <div class="row align-items-center g-5">
 
                 <!-- Content -->
-                <div class="col-lg-6 text-white">
+                <div class="col-lg-6 text-white responsive-aos" data-desktop-aos="fade-right" data-mobile-aos="fade-up">
                     <h2 class="section-title">
                         Mobile Wallets Application for <span class="span-color">Digital Onboardings</span>
                     </h2>
@@ -1365,7 +1366,7 @@
 
                 <!-- Image -->
                 <div class="col-lg-6 text-center">
-                    <div class="shadow-image position-relative mx-auto">
+                    <div class="shadow-image position-relative mx-auto responsive-aos" data-desktop-aos="fade-left" data-mobile-aos="fade-up">
                         <img src="../assets/images/moible-wallet-applications.webp" class="img-fluid rounded-4"
                             alt="Digital Account Opening">
                     </div>
@@ -1386,14 +1387,14 @@
 
                 <!-- Image -->
                 <div class="col-lg-6 text-center">
-                    <div class="shadow-image position-relative mx-auto">
+                    <div class="shadow-image position-relative mx-auto responsive-aos" data-desktop-aos="fade-right" data-mobile-aos="fade-up">
                         <img src="../assets/images/Online Payments.webp" class="img-fluid rounded-4"
                             alt="Digital Account Opening">
                     </div>
                 </div>
 
                 <!-- Content -->
-                <div class="col-lg-6 text-white">
+                <div class="col-lg-6 text-white responsive-aos" data-desktop-aos="fade-left" data-mobile-aos="fade-up">
                     <h2 class="section-title">
                         Online <span class="span-color">Payments</span>
                     </h2>
@@ -1587,6 +1588,47 @@
   </footer>
 
   <!-- Footer Section End  -->
+
+    <!-- AOS Animation Script Start  -->
+
+  <script src="../assets/js/aos.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      function setAOS() {
+        const isMobile = window.innerWidth <= 768;
+        const elements = document.querySelectorAll('.responsive-aos');
+
+        elements.forEach(el => {
+          if (isMobile) {
+            el.setAttribute('data-aos', el.getAttribute('data-mobile-aos'));
+          } else {
+            el.setAttribute('data-aos', el.getAttribute('data-desktop-aos'));
+          }
+        });
+
+        // Refresh AOS after updating attributes
+        AOS.refreshHard();
+      }
+
+      // Run first time
+      setAOS();
+
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: false,
+      });
+
+      // Run again on resize
+      window.addEventListener('resize', setAOS);
+
+    });
+  </script>
+
+  <!-- AOS Animation Script End  -->
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
