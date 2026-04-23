@@ -10,6 +10,68 @@
       <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png">
   <link rel="stylesheet" href="assets/css/animate.min.css" />
   <link href="assets/css/aos.css" rel="stylesheet">
+  <style>
+    .blog-popup-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1200;
+      padding: 1rem;
+    }
+
+    .blog-popup-backdrop.show {
+      display: flex;
+    }
+
+    .blog-popup {
+      width: min(760px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.26);
+    }
+
+    .blog-popup img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      object-fit: cover;
+      max-height: 360px;
+    }
+
+    .blog-popup-body h5 {
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .blog-popup-body p {
+      margin-bottom: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .blog-popup-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.7rem;
+      border: 0;
+      background: transparent;
+      font-size: 1.7rem;
+      line-height: 1;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .blog-card .read-more {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
@@ -1060,7 +1122,7 @@
 
                                 <!-- Card -->
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="blog-card">
+                                    <div class="blog-card" data-blog-id="blog-1">
                                         <img src="assets/images/Airborne Intercom System.svg">
                                         <div class="overlay">
                                             <h5>Airborne Intercom System</h5>
@@ -1072,7 +1134,7 @@
                                 </div>
 
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="blog-card">
+                                    <div class="blog-card" data-blog-id="blog-2">
                                         <img src="assets/images/technical-writing.svg">
                                         <div class="overlay">
                                             <h5>The Role of Visuals in Technical Writing</h5>
@@ -1084,7 +1146,7 @@
                                 </div>
 
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="blog-card">
+                                    <div class="blog-card" data-blog-id="blog-3">
                                         <img src="https://picsum.photos/500/600?3">
                                         <div class="overlay">
                                             <h5>From Code to Cardio</h5>
@@ -1098,7 +1160,7 @@
 
                                 <!-- second row -->
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="blog-card">
+                                    <div class="blog-card" data-blog-id="blog-4">
                                         <img src="https://picsum.photos/500/600?4">
                                         <div class="overlay">
                                             <h5>Airborne Intercom System</h5>
@@ -1109,7 +1171,7 @@
                                 </div>
 
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="blog-card">
+                                    <div class="blog-card" data-blog-id="blog-5">
                                         <img src="https://picsum.photos/500/600?5">
                                         <div class="overlay">
                                             <h5>The Role of Visuals in Technical Writing</h5>
@@ -1120,7 +1182,7 @@
                                 </div>
 
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="blog-card">
+                                    <div class="blog-card" data-blog-id="blog-6">
                                         <img src="https://picsum.photos/500/600?6">
                                         <div class="overlay">
                                             <h5>From Code to Cardio</h5>
@@ -1642,6 +1704,120 @@
 
     <!-- Tabs Section End  -->
 
+    <div id="blogDetailsTemplates" style="display: none;">
+        <div data-blog-template="blog-1">
+            <h5>What is Lorem Ipsum?</h5>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <h5>Why do we use it?</h5>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                distribution of letters, as opposed to using 'Content here, content here', making it look like
+                readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+                default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+                Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected
+                humour and the like).</p>
+            <h5>Where does it come from?</h5>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+                Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+                Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a
+                Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
+                undoubtable source.</p>
+            <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in
+                their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+        </div>
+
+        <div data-blog-template="blog-2">
+            <h5>Designing Visual-First Documentation</h5>
+            <p>Strong technical documentation combines accurate writing with purposeful visuals. Instead of adding
+                diagrams at the end, teams should define where screenshots, flow maps, and architecture blocks reduce
+                reader confusion at each section. This keeps the content practical for onboarding, troubleshooting, and
+                product adoption.</p>
+            <h5>How Visuals Improve Comprehension</h5>
+            <p>Readers process a sequence faster when headings, callouts, and annotated images are aligned to one
+                message per block. A single explanatory figure can replace several paragraphs and reduce support
+                questions. Well-labeled visuals also improve retention because users can map instructions to interface
+                components in real time.</p>
+            <h5>Implementation Framework</h5>
+            <p>Create a content template that includes visual placeholders, naming standards, and review checklists for
+                consistency. Update these assets alongside release cycles so each visual reflects current features.
+                Measure documentation impact through time-to-task and first-time-success metrics.</p>
+        </div>
+
+        <div data-blog-template="blog-3">
+            <h5>From Code to Cardio: Building Sustainable Routines</h5>
+            <p>Engineering work often means long focused sessions with limited movement. A sustainable routine starts
+                with short activity intervals between coding blocks, hydration goals, and realistic movement targets.
+                These small habits improve energy stability and reduce fatigue by the end of the day.</p>
+            <h5>Performance Benefits for Developers</h5>
+            <p>Regular workouts improve concentration, reaction time, and stress regulation. Teams that encourage
+                movement breaks and healthy meal choices frequently report better collaboration quality and lower
+                burnout rates during high-delivery periods.</p>
+            <h5>Weekly Routine Blueprint</h5>
+            <p>Use a simple weekly plan: 3 strength sessions, 2 cardio sessions, daily mobility, and consistent sleep
+                windows. Keep tracking lightweight so progress is easy to maintain without disrupting deep work.</p>
+        </div>
+
+        <div data-blog-template="blog-4">
+            <h5>Modern Airborne Intercom Architecture</h5>
+            <p>Intercom systems in modern aircraft require low-latency audio routing, redundant communication channels,
+                and hardware-level noise management. Architecture decisions must prioritize reliability in high-vibration
+                and high-noise environments while maintaining clear pilot and crew communication.</p>
+            <h5>Operational Challenges</h5>
+            <p>Temperature shifts, electromagnetic interference, and mixed analog-digital integrations can impact signal
+                quality. Engineering teams should validate compatibility across cockpit panels, headset models, and
+                auxiliary mission equipment before deployment.</p>
+            <h5>Validation and Compliance</h5>
+            <p>Successful implementations include rigorous bench testing, in-flight simulations, and documentation
+                aligned with aviation compliance standards. This approach minimizes communication failure risks and
+                supports dependable long-term operations.</p>
+        </div>
+
+        <div data-blog-template="blog-5">
+            <h5>Visual Communication in Product Teams</h5>
+            <p>Product teams move faster when visual communication standards are built into their writing process.
+                Wireframes, process diagrams, and UI states should be documented with the same rigor as functional
+                requirements to reduce interpretation gaps between teams.</p>
+            <h5>Common Documentation Gaps</h5>
+            <p>Many teams publish text-heavy updates that omit decision rationale and visual context. This causes
+                repeated clarification cycles between engineering, QA, and support. Structured visual references can
+                significantly reduce review time.</p>
+            <h5>Recommended Workflow</h5>
+            <p>Adopt versioned assets, define diagram ownership, and include visual QA in each release checklist.
+                Consistent visual communication improves handoff quality and accelerates delivery across distributed
+                teams.</p>
+        </div>
+
+        <div data-blog-template="blog-6">
+            <h5>Healthy Balance Between Tech and Fitness</h5>
+            <p>Balancing productivity with health is not about maximizing workouts; it is about building repeatable
+                routines that fit technical schedules. Brief movement sessions, posture resets, and proper recovery
+                create measurable improvements in daily output.</p>
+            <h5>Practical Habits for Busy Professionals</h5>
+            <p>Use calendar prompts for stretch breaks, walk during routine calls, and keep meals high in protein and
+                fiber for stable focus. These small habits are easier to sustain than intensive short-term programs and
+                produce better long-term health outcomes.</p>
+            <h5>Long-Term Results</h5>
+            <p>When consistency replaces intensity, professionals experience better energy management, improved
+                concentration, and stronger resilience during demanding project cycles. The result is a healthier and
+                more dependable work rhythm.</p>
+        </div>
+    </div>
+
+    <div class="blog-popup-backdrop" id="blogPopup" aria-hidden="true">
+        <div class="blog-popup" role="dialog" aria-modal="true" aria-labelledby="blogPopupTitle">
+            <button class="blog-popup-close" type="button" id="blogPopupClose" aria-label="Close popup">&times;</button>
+            <img id="blogPopupImage" src="" alt="Blog image">
+            <h4 id="blogPopupTitle"></h4>
+            <div id="blogPopupContent" class="blog-popup-body"></div>
+        </div>
+    </div>
+
   <!-- Footer Section Start  -->
 
   <footer class="footer-section footer-bg-color mt-5">
@@ -1780,6 +1956,80 @@
       easing: 'ease-in-out', // smooth easing
       once: false, // repeat animation on scroll
     });
+
+    (function () {
+      const popup = document.getElementById('blogPopup');
+      const popupImage = document.getElementById('blogPopupImage');
+      const popupTitle = document.getElementById('blogPopupTitle');
+      const popupContent = document.getElementById('blogPopupContent');
+      const closeButton = document.getElementById('blogPopupClose');
+      const readMoreButtons = document.querySelectorAll('.blog-card .read-more');
+
+      if (!popup || !popupImage || !popupTitle || !popupContent || !closeButton || !readMoreButtons.length) {
+        return;
+      }
+
+      const openPopup = function (blogCard) {
+        const image = blogCard.querySelector('img');
+        const title = blogCard.querySelector('.overlay h5');
+        const text = blogCard.querySelector('.overlay p');
+        const blogId = blogCard.getAttribute('data-blog-id');
+        const template = blogId
+          ? document.querySelector('[data-blog-template="' + blogId + '"]')
+          : null;
+
+        popupImage.src = image ? image.getAttribute('src') : '';
+        popupImage.alt = title ? title.textContent.trim() : 'Blog image';
+        popupTitle.textContent = title ? title.textContent.trim() : 'Blog Details';
+        popupContent.innerHTML = template
+          ? template.innerHTML
+          : '<p>' + (text ? text.textContent.trim() : 'Blog content is not available.') + '</p>';
+        popup.classList.add('show');
+        popup.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closePopup = function () {
+        popup.classList.remove('show');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      readMoreButtons.forEach(function (button) {
+        button.setAttribute('role', 'button');
+        button.setAttribute('tabindex', '0');
+
+        button.addEventListener('click', function () {
+          const blogCard = button.closest('.blog-card');
+          if (blogCard) {
+            openPopup(blogCard);
+          }
+        });
+
+        button.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            const blogCard = button.closest('.blog-card');
+            if (blogCard) {
+              openPopup(blogCard);
+            }
+          }
+        });
+      });
+
+      closeButton.addEventListener('click', closePopup);
+      popup.addEventListener('click', function (event) {
+        if (event.target === popup) {
+          closePopup();
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && popup.classList.contains('show')) {
+          closePopup();
+        }
+      });
+    })();
   </script>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
