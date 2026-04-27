@@ -32,7 +32,7 @@
 
           <!-- Mega dropdown of services Start -->
           <li class="nav-item mega-dropdown">
-            <a class="nav-link" href="services.html">Services</a>
+            <a class="nav-link mega-toggle" href="services.html" aria-expanded="false">Services</a>
 
             <div class="mega-menu shadow-sm">
               <div class="container">
@@ -40,7 +40,7 @@
 
                   <!-- LEFT TABS -->
                   <div class="col-lg-3">
-                    <div class="nav flex-column gap-3 nav-pills mega-tabs" role="tablist">
+                    <div class="nav flex-column gap-3 nav-pills mega-tabs mb-3" role="tablist">
                       <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#software">
                         Software
                       </button>
@@ -466,7 +466,7 @@
 
           <!-- Mega dropdown of Industries Start -->
           <li class="nav-item mega-dropdown">
-            <a class="nav-link" href="industries.html">Industries</a>
+            <a class="nav-link mega-toggle" href="industries.html" aria-expanded="false">Industries</a>
 
             <div class="mega-menu">
               <div class="container">
@@ -474,7 +474,7 @@
 
                   <!-- LEFT TABS -->
                   <div class="col-lg-3">
-                    <div class="nav flex-column gap-3 nav-pills mega-tabs" role="tablist">
+                    <div class="nav flex-column gap-3 nav-pills mega-tabs mb-3" role="tablist">
                       <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#banking">
                         Banking Solutions
                       </button>
@@ -2189,6 +2189,45 @@
       // Run again on resize
       window.addEventListener('resize', setAOS);
 
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileQuery = window.matchMedia("(max-width: 991.98px)");
+      const megaItems = document.querySelectorAll(".mega-dropdown");
+
+      megaItems.forEach((item) => {
+        const toggle = item.querySelector(".mega-toggle");
+        if (!toggle) return;
+
+        toggle.addEventListener("click", function (event) {
+          if (!mobileQuery.matches) return;
+
+          const isOpen = item.classList.contains("open");
+          if (!isOpen) {
+            event.preventDefault();
+            megaItems.forEach((menuItem) => {
+              menuItem.classList.remove("open");
+              const menuToggle = menuItem.querySelector(".mega-toggle");
+              if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+            });
+            item.classList.add("open");
+            toggle.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!mobileQuery.matches) return;
+        if (event.target.closest(".mega-dropdown")) return;
+
+        megaItems.forEach((item) => {
+          item.classList.remove("open");
+          const toggle = item.querySelector(".mega-toggle");
+          if (toggle) toggle.setAttribute("aria-expanded", "false");
+        });
+      });
     });
   </script>
 

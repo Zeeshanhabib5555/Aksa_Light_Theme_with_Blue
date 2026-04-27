@@ -1043,7 +1043,8 @@
             <div class="row g-4 justify-content-center mt-5">
 
                 <div class="col-12 col-sm-6 col-md-3">
-                    <div class="benefit-card text-center responsive-aos" data-desktop-aos="fade-right" data-mobile-aos="fade-up"> 
+                    <div class="benefit-card text-center responsive-aos" data-desktop-aos="fade-right"
+                        data-mobile-aos="fade-up">
                         <svg class="mb-3" width="39" height="36" viewBox="0 0 39 36" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -1053,7 +1054,8 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3">
-                    <div class="benefit-card text-center responsive-aos" data-desktop-aos="fade-up" data-mobile-aos="fade-up">
+                    <div class="benefit-card text-center responsive-aos" data-desktop-aos="fade-up"
+                        data-mobile-aos="fade-up">
                         <svg class="mb-3" width="36" height="36" viewBox="0 0 36 36" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -1063,7 +1065,8 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3">
-                    <div class="benefit-card text-center responsive-aos" data-desktop-aos="fade-down" data-mobile-aos="fade-up">
+                    <div class="benefit-card text-center responsive-aos" data-desktop-aos="fade-down"
+                        data-mobile-aos="fade-up">
                         <svg class="mb-3" width="36" height="36" viewBox="0 0 36 36" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -1075,7 +1078,8 @@
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-3">
-                    <div class="benefit-card text-center responsive-aos" data-desktop-aos="fade-left" data-mobile-aos="fade-up">
+                    <div class="benefit-card text-center responsive-aos" data-desktop-aos="fade-left"
+                        data-mobile-aos="fade-up">
                         <svg class="mb-3" width="35" height="36" viewBox="0 0 35 36" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -1099,14 +1103,15 @@
             <div class="row align-items-center g-5">
 
                 <!-- Left Image -->
-                <div class="col-lg-6 text-center" data-aos="fade-right">
+                <div class="col-lg-6 text-center responsive-aos" data-desktop-aos="fade-right"
+                    data-mobile-aos="fade-up">
                     <div class="shadow-image position-relative mx-auto">
                         <img src="../assets/images/Software.webp" class="img-fluid rounded-4" alt="Software">
                     </div>
                 </div>
 
                 <!-- Right Content -->
-                <div class="col-lg-6 text-white" data-aos="fade-left">
+                <div class="col-lg-6 text-white responsive-aos" data-desktop-aos="fade-left" data-mobile-aos="fade-up">
                     <h2 class="section-title">
                         Software
                     </h2>
@@ -1180,7 +1185,7 @@
             <div class="row align-items-center g-5">
 
                 <!-- Right Content -->
-                <div class="col-lg-6 text-white" data-aos="fade-right">
+                <div class="col-lg-6 text-white responsive-aos" data-desktop-aos="fade-right" data-mobile-aos="fade-up">
                     <h2 class="section-title">
                         Hardware
                     </h2>
@@ -1195,7 +1200,7 @@
                 </div>
 
                 <!-- Left Image -->
-                <div class="col-lg-6 text-center" data-aos="fade-left">
+                <div class="col-lg-6 text-center responsive-aos" data-desktop-aos="fade-left" data-mobile-aos="fade-up">
                     <div class="shadow-image position-relative mx-auto">
                         <img src="../assets/images/Hardware.webp" class="img-fluid rounded-4" alt="Hardware">
                     </div>
@@ -1260,7 +1265,8 @@
 
                 <!-- Left Image -->
                 <div class="col-lg-6 text-center">
-                    <div class="shadow-image position-relative mx-auto responsive-aos" data-desktop-aos="fade-right" data-mobile-aos="fade-up">
+                    <div class="shadow-image position-relative mx-auto responsive-aos" data-desktop-aos="fade-right"
+                        data-mobile-aos="fade-up">
                         <img src="../assets/images/Lifecycle Support.webp" class="img-fluid rounded-4"
                             alt="Lifecycle Support">
                     </div>
@@ -1304,7 +1310,8 @@
 
                 <!-- Left Image -->
                 <div class="col-lg-6 text-center">
-                    <div class="shadow-image position-relative mx-auto responsive-aos" data-desktop-aos="fade-left" data-mobile-aos="fade-up">
+                    <div class="shadow-image position-relative mx-auto responsive-aos" data-desktop-aos="fade-left"
+                        data-mobile-aos="fade-up">
                         <img src="../assets/images/HR Services.webp" class="img-fluid rounded-4"
                             alt="HR & Engineering Services">
                     </div>
@@ -1455,46 +1462,46 @@
 
     <!-- Footer Section End  -->
 
-  <!-- AOS Animation Script Start  -->
+    <!-- AOS Animation Script Start  -->
 
-  <script src="../assets/js/aos.js"></script>
+    <script src="../assets/js/aos.js"></script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
 
-      function setAOS() {
-        const isMobile = window.innerWidth <= 768;
-        const elements = document.querySelectorAll('.responsive-aos');
+            function setAOS() {
+                const isMobile = window.innerWidth <= 768;
+                const elements = document.querySelectorAll('.responsive-aos');
 
-        elements.forEach(el => {
-          if (isMobile) {
-            el.setAttribute('data-aos', el.getAttribute('data-mobile-aos'));
-          } else {
-            el.setAttribute('data-aos', el.getAttribute('data-desktop-aos'));
-          }
+                elements.forEach(el => {
+                    if (isMobile) {
+                        el.setAttribute('data-aos', el.getAttribute('data-mobile-aos'));
+                    } else {
+                        el.setAttribute('data-aos', el.getAttribute('data-desktop-aos'));
+                    }
+                });
+
+                // Refresh AOS after updating attributes
+                AOS.refreshHard();
+            }
+
+            // Run first time
+            setAOS();
+
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: false,
+            });
+
+            // Run again on resize
+            window.addEventListener('resize', setAOS);
+
         });
+    </script>
 
-        // Refresh AOS after updating attributes
-        AOS.refreshHard();
-      }
-
-      // Run first time
-      setAOS();
-
-      // Initialize AOS
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: false,
-      });
-
-      // Run again on resize
-      window.addEventListener('resize', setAOS);
-
-    });
-  </script>
-
-  <!-- AOS Animation Script End  -->
+    <!-- AOS Animation Script End  -->
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
