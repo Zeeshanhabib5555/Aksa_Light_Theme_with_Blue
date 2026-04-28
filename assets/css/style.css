@@ -64,8 +64,8 @@ p {
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 100vh;
-  /* padding-top: 120px; */
+  height: 90vh;
+  margin-top: 86px;
   overflow: hidden;
 
 }
@@ -95,7 +95,7 @@ p {
 }
 
 .hero-title {
-  margin-bottom: 240px;
+  margin-bottom: 246px;
   z-index: 1;
 }
 
@@ -111,8 +111,8 @@ p {
 }
 
 .hero-wave-1 {
-  height: 53%;
-  top: 42dvh;
+  height: 60%;
+  top: 36dvh;
   z-index: 0;
   max-height: 100%;
 }
@@ -154,7 +154,7 @@ p {
 }
 
 .subpage-hero-bg {
-  background: url("../images/subpage-hero-bg.svg") center center / cover no-repeat;
+  background: url("") center center / cover no-repeat;
 }
 
 /* Partners */
@@ -177,6 +177,12 @@ p {
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
+  .bg-video{
+    top: 60% !important;
+  }
+  .subpage-hero-bg{
+    height: 56vh !important;
+  }
   .hero-section{
     height: 56vh;
   }
@@ -196,12 +202,46 @@ p {
   .contact-form{
     width: 100vw !important;
   }
+  .img-para-section{
+    margin-top: 0px !important;
+  }
+  .design-house{
+    margin-top: 0px !important;
+    padding: 60px 0 !important;
+  }
+  .services-section{
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  .leading-with-next-gen{
+    padding: 60px 0px !important;
+  }
+  .leading-card{
+    text-align: center !important;
+  }
+
+  .mission-vision{
+    margin: 0px !important;
+    padding: 60px 0 !important;
+  }
+
+  .mission-vision .section-title{
+    margin-bottom: 0px !important;
+  }
+  .timeline-section .nav-section{
+    margin-top: 30px !important;
+  }
+
 }
 
 .primary-btn {
   background: var(--linear-gradient);
   color: var(--white-color);
   border-radius: 4px;
+}
+
+.primary-btn:active{
+  color: var(--white-color) !important;
 }
 
 .primary-btn:hover {
@@ -213,6 +253,10 @@ p {
   color: var(--primary-color);
   border-radius: 4px;
   padding: 8px 20px;
+}
+
+.outline-btn:active{
+  color: var(--white-color) !important;
 }
 
 .outline-btn:hover {
@@ -505,7 +549,7 @@ p {
 @media (max-width: 767px) {
   .service-item {
     border-right: none;
-    border-bottom: 1px solid #333;
+    /* border-bottom: 1px solid #333; */
   }
 
   .service-item:nth-last-child(-n+2) {
@@ -774,7 +818,7 @@ p {
   }
 
   .core-values-section {
-    padding: 60px 0;
+    padding: 0px 0 !important;
   }
 }
 
@@ -1893,4 +1937,21 @@ textarea.custom-input {
 }
 .navbar-toggler-icon {
   filter: invert(1);       /* makes icon white */
+}
+
+.subpage-hero-bg {
+  position: relative;
+  overflow: hidden;
+  height: 90vh; /* or your required height */
+}
+
+.bg-video {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
 }
