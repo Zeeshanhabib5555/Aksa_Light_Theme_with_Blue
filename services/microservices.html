@@ -1363,15 +1363,6 @@
 
     <!-- Footer Section End  -->
 
-    <script src="assets/js/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800, // Manage Animation speed
-            easing: 'ease-in-out', // smooth easing
-            once: false, // repeat animation on scroll
-        });
-    </script>
-
     <!-- AOS Animation Script Start  -->
 
     <script src="../assets/js/aos.js"></script>
@@ -1395,15 +1386,15 @@
                 AOS.refreshHard();
             }
 
-            // Run first time
-            setAOS();
-
             // Initialize AOS
             AOS.init({
                 duration: 800,
                 easing: 'ease-in-out',
                 once: false,
             });
+
+            // Run first time
+            setAOS();
 
             // Run again on resize
             window.addEventListener('resize', setAOS);

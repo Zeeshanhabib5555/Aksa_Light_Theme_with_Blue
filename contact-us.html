@@ -1084,7 +1084,7 @@
                     behind-the-scenes moments.
                 </p>
             </div>
-            <div class="row">
+            <div class="row g-3">
                 <div class="col-lg-4">
                     <div class="talk-details responsive-aos" data-desktop-aos="fade-right" data-mobile-aos="fade-up">
                         <svg class="mb-5" width="36" height="30" viewBox="0 0 36 30" fill="none"
@@ -1289,7 +1289,7 @@
 
     <!-- AOS Animation Script Start  -->
 
-    <script src="../assets/js/aos.js"></script>
+    <script src="assets/js/aos.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -1310,15 +1310,15 @@
                 AOS.refreshHard();
             }
 
-            // Run first time
-            setAOS();
-
             // Initialize AOS
             AOS.init({
                 duration: 800,
                 easing: 'ease-in-out',
                 once: false,
             });
+
+            // Run first time
+            setAOS();
 
             // Run again on resize
             window.addEventListener('resize', setAOS);

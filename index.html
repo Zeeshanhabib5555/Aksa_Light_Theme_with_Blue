@@ -918,7 +918,7 @@
     <!-- Wave Background -->
     <!-- <div class="hero-wave hero-wave-1"></div> -->
          <video autoplay muted loop playsinline class="bg-video">
-            <source src="../assets/images/hero-bg-video-1.mp4">
+            <source src="assets/images/hero-bg-video-1.mp4">
         </video>
   </section>
 
@@ -976,13 +976,13 @@
 
   <!-- imag para section Start  -->
 
-  <section class="img-para-section py-5 my-5">
+  <section class="img-para-section py-5 my-5 leading-technology-section">
     <div class="container">
       <div class="row align-items-center g-5">
 
         <!-- Left Image -->
-        <div class="col-lg-6 text-center">
-          <div class="shadow-image position-relative mx-auto responsive-aos" data-desktop-aos="fade-right"
+        <div class="col-lg-6 text-center leading-technology-image-col">
+          <div class="shadow-image position-relative mx-auto responsive-aos leading-technology-image" data-desktop-aos="fade-right"
             data-mobile-aos="fade-up">
             <img src="assets/images/Leading Technology.webp" class="img-fluid rounded-4" alt="Digital Account Opening">
           </div>
@@ -1890,7 +1890,7 @@
               </div>
             </div>
 
-            <img src="assets/images/Innovation.svg" alt="Innovation">
+            <img src="assets/images/innovation.webp" alt="Innovation">
           </div>
         </div>
 
@@ -2181,15 +2181,15 @@
         AOS.refreshHard();
       }
 
-      // Run first time
-      setAOS();
-
       // Initialize AOS
       AOS.init({
         duration: 800,
         easing: 'ease-in-out',
         once: false,
       });
+
+      // Run first time
+      setAOS();
 
       // Run again on resize
       window.addEventListener('resize', setAOS);

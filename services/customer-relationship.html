@@ -1229,15 +1229,15 @@
         AOS.refreshHard();
       }
 
-      // Run first time
-      setAOS();
-
       // Initialize AOS
       AOS.init({
         duration: 800,
         easing: 'ease-in-out',
         once: false,
       });
+
+      // Run first time
+      setAOS();
 
       // Run again on resize
       window.addEventListener('resize', setAOS);
