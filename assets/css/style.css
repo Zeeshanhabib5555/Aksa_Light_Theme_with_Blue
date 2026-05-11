@@ -196,84 +196,6 @@ p {
   opacity: 1;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .bg-video {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .subpage-hero-bg {
-    height: 56vh !important;
-  }
-
-  .hero-section {
-    height: 56vh;
-  }
-
-  .hero-title {
-    margin-bottom: 0px;
-  }
-
-  .hero-section h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-wave {
-    height: 24%;
-  }
-
-  .heroWave-other {
-    height: 100%;
-  }
-
-  .contact-form {
-    width: 100vw !important;
-  }
-
-  .img-para-section {
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-  }
-
-  .design-house {
-    margin-top: 0px !important;
-    padding: 60px 0 !important;
-  }
-
-  .services-section {
-    padding: 0px !important;
-    margin: 0px !important;
-  }
-
-  .leading-with-next-gen {
-    padding: 60px 0px !important;
-  }
-
-  .leading-card {
-    text-align: center !important;
-  }
-
-  .mission-vision {
-    margin: 0px !important;
-    padding: 60px 0 !important;
-  }
-
-  .mission-vision .section-title {
-    margin-bottom: 0px !important;
-  }
-
-  .timeline-section .nav-section {
-    margin-top: 30px !important;
-  }
-  .bg-light-color{
-    padding: 60px 0 !important;
-  }
-
-}
-
 .primary-btn {
   background: var(--linear-gradient);
   color: var(--white-color);
@@ -400,18 +322,6 @@ p {
   font-size: 40px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .main-title {
-    font-size: 32px;
-  }
-
-  .value {
-    font-size: 32px;
-  }
-}
-
-
 .services-section {
   padding: 80px 0;
   margin: 80px 0;
@@ -488,20 +398,6 @@ p {
   font-size: 26px;
   text-align: end;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 32px;
-    text-align: center;
-  }
-
-  .section-subtitle {
-    text-align: center !important;
-  }
-
-}
-
 
 /* Our Services Section Css Start  */
 .services-title {
@@ -1315,6 +1211,10 @@ textarea.custom-input {
   background-color: var(--light-background);
 }
 
+.casestudies-left svg path{
+  fill: var(--primary-color);
+}
+
 .event-card {
   /* background: #0d0d0d; */
   border-radius: 8px 8px 4px 4px;
@@ -1675,6 +1575,10 @@ textarea.custom-input {
   fill: var(--primary-color);
 }
 
+.img-para-section svg {
+  flex-shrink: inherit;
+}
+
 /* Stop animation only on mobile for this section */
 @media (max-width: 767px) {
   .stop-aos-mobile {
@@ -2015,4 +1919,108 @@ textarea.custom-input {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .bg-video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .subpage-hero-bg {
+    height: 56vh !important;
+  }
+
+  .hero-section {
+    height: 56vh;
+  }
+
+  .hero-title {
+    margin-bottom: 0px;
+  }
+
+  .hero-section h1 {
+    font-size: 32px;
+  }
+
+  .hero-wave {
+    height: 24%;
+  }
+
+  .heroWave-other {
+    height: 100%;
+  }
+
+  .contact-form {
+    width: 100vw !important;
+  }
+
+  .img-para-section {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+
+  .design-house {
+    margin-top: 0px !important;
+    padding: 60px 0 !important;
+  }
+
+  .services-section {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+
+  .leading-with-next-gen {
+    padding: 60px 0px !important;
+  }
+
+  .leading-card {
+    text-align: center !important;
+  }
+
+  .mission-vision {
+    margin: 0px !important;
+    padding: 60px 0 !important;
+  }
+
+  .mission-vision .section-title {
+    margin-bottom: 0px !important;
+  }
+
+  .timeline-section .nav-section {
+    margin-top: 30px !important;
+  }
+
+  .bg-light-color {
+    padding: 60px 0 !important;
+  }
+
+  .section-title {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .services-title {
+    font-size: 30px;
+  }
+
+  .section-subtitle {
+    text-align: center !important;
+  }
+
+  .main-title {
+    font-size: 30px;
+  }
+
+  .value {
+    font-size: 30px;
+  }
+
+  .industries-section .section-title {
+    font-size: 30px;
+  }
+
 }
